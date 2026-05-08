@@ -1,4 +1,5 @@
 import express from "express";
+import helloHandler from "./api/hello.js";
 
 const app = express();
 
@@ -8,9 +9,7 @@ app.get("/", (req, res) => {
   res.send("Backend is running 🚀");
 });
 
-app.get("/api/hello", (req, res) => {
-  res.json({ message: "Hello from Express backend!" });
-});
+app.get("/api/hello", helloHandler);
 
 const PORT = process.env.PORT || 5000;
 
